@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <div className='flex flex-col justify-center items-center'>
-      <div className={`container border-8 border-red-700 w-[600px] h-[600px] bg-zinc-900 m-8 rounded-lg ${shake ? 'animate-shake' : ''}`}>
+      <div className={`border-8 border-red-700 bg-zinc-900 m-8 rounded-lg ${shake ? 'animate-shake' : ''}`}>
         {grid.map((_, rowIndex) => (
           <div key={rowIndex} className='flex justify-center text-center items-center'>
             {grid.map((_, cellIndex) => (
@@ -47,7 +47,7 @@ export default function Home() {
           </div>
         ))}
         <div className='flex justify-between shadow-md bg-red-600 items-center p-8'>
-          <div className='grid grid-cols-3 gap-2 lg:grid-cols-6'>
+          <div className='grid grid-cols-3 -gap-2'>
             <button className='w-8 h-8 rounded-full bg-black' onClick={changeColor}></button>
             <button className='w-8 h-8 rounded-full bg-white' onClick={changeColor}></button>
             <button className='w-8 h-8 border-red-700 border-2 rounded-full bg-red-500' onClick={changeColor}></button>
@@ -56,10 +56,16 @@ export default function Home() {
             {/* make a random colour button */}
             {/* <button className='w-8 h-8 rounded-full' onClick={changeColor}></button> */}
           </div>
-          <h1 className='text-4xl text-center font-black bg-gradient-to-r from-red-700 to-red-800 bg-clip-text text-transparent'>Etch a Sketch</h1>
+          <h1 className='text-4xl text-center font-black bg-gradient-to-r from-red-700 to-red-800 bg-clip-text text-transparent p-8'>Etch a Sketch</h1>
           <div className='space-x-4'>
-            <button className='bg-zinc-100 p-2 w-16 h-16 rounded-full shadow-md text-center font-black text-zinc-300 outline-2 outline-zinc-400' onClick={clearGrid}>Clear</button>
+            <button className='bg-zinc-100 p-2 w-16 h-16 rounded-full shadow-md text-center font-black text-zinc-300 border-4' onClick={clearGrid}>Clear</button>
           </div>
+        </div>
+        <div className='flex space-x-4 absolute left -z-10'>
+          <div className='bg-white rounded-lg p-4 shadow-md font-semibold text-zinc-400 border-4 ml-8'>8 x 8</div>
+          <div className='bg-white rounded-lg p-4 shadow-md font-semibold text-zinc-400 border-4'>16 x 16</div>
+          <div className='bg-white rounded-lg p-4 shadow-md font-semibold text-zinc-400 border-4'>32 x 32</div>
+          <div className='bg-white rounded-lg p-4 shadow-md font-semibold text-zinc-400 border-4'>64 x 64</div>
         </div>
       </div>
       <footer className='text-center font-thin mt-16 text-zinc-100'>

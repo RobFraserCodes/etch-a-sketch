@@ -22,6 +22,6 @@
 
   @layer components {
     .cell {
-      @apply flex-1 h-8 w-8 bg-zinc-100;
+      @apply flex-1 h-8 w-8 bg-zinc-100 border;
     }
   }
