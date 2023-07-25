@@ -19,4 +19,9 @@
   .animate-shake {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   }
-  
+
+  @layer components {
+    .cell {
+      @apply flex-1 h-8 w-8 bg-zinc-100;
+    }
+  }
