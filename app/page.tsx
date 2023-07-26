@@ -1,4 +1,8 @@
 'use client'
+// Future improvements:
+// - add a random colour button
+// - create gallery
+// - add a colour picker
 
 import { useState } from 'react';
 
@@ -9,17 +13,17 @@ export default function Home() {
   const [color, setColor] = useState('bg-red-500');
   const [shake, setShake] = useState(false);
 
-  const handleMouseOver = (e) => {
-    e.target.className = `flex-1 h-8 w-8 md:h-12 md:w-12 lg:h-16 lg:w-16 ${color}`;
+  const handleMouseOver = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.currentTarget.className = `flex-1 h-8 w-8 md:h-12 md:w-12 lg:h-16 lg:w-16 ${color}`;
   }
 
-  function changeColor(e) {
-    const classes = e.target.className.split(' ');
+  function changeColor(e: React.MouseEvent<HTMLButtonElement>) {
+    const classes = e.currentTarget.className.split(' ');
     const colorClass = classes[classes.length - 1];
     setColor(colorClass);
-  }
+  }  
 
-  function clearGrid(e) {
+  function clearGrid(e: React.MouseEvent<HTMLButtonElement>) {
     const cells = document.querySelectorAll('.flex-1');
     cells.forEach(cell => {
       cell.className = `flex-1 h-8 w-8 md:h-12 md:w-12 lg:h-16 lg:w-16 bg-zinc-100`;
